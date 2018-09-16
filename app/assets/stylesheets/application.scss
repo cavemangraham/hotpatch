@@ -1,0 +1,92 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background: #e2f5fe;
+}
+
+.header {
+  max-width: 640px;
+  margin: 30px auto 0px auto;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.logo {
+  margin-left: -20px;
+}
+
+.logo-link {
+  background: #fff;
+  font-size: 50px;
+  border: 4px solid white;
+  padding: 20px 12px 20px 12px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+}
+
+.tagline {
+  max-width: 120px;
+  margin-top: 150px;
+  color: #91c1d8;
+  font-size: 20px;
+}
+
+.date {
+  font-size: 110px;
+  font-weight: 700;
+  margin-left: -160px;
+  margin-top: 80px;
+  color: #C1E5F6;
+  position: relative;
+}
+
+.date-number {
+  font-size: 90px;
+  font-weight: 700;
+  margin-left: -160px;
+  margin-top: -70px;
+  color: #C1E5F6;
+  position: relative;
+}
+
+.posts {
+  background: #fff;
+  margin: auto auto;
+  margin-top: 20px;
+  padding: 40px;
+  margin-bottom: 60px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+}
+
+.newsletter-wrapper {
+  margin: 0 auto;
+  width: 840px;
+  margin-bottom: 60px;
+  vertical-align: top;
+}
+
+.newsletter {
+  padding: 40px;
+  background: #c1e5f6;
+
+}
+.newsletter-tagline {
+  margin-right: 20px;
+}
+
+.newsletter-form {
+
+}
+
+.email-input {
+  width: 200px;
+  padding: 6px 12px;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.newsletter-button {
+  padding: 6px 16px;
+  margin-top: 4px;
+}
+
