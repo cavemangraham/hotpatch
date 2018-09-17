@@ -1,5 +1,13 @@
+<p id="notice"><%= notice %></p>
+
 <h1>New Link</h1>
 
 <%= render 'form', link: @link %>
+
+<% unless @fresh_links.blank? %>
+  <% @fresh_links.each do |link| %>
+    <p><%= link.url %></p>
+  <% end %>
+<% end %>
 
 <%= link_to 'Back', links_path %>

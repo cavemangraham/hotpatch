@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field hidden">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field hidden">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
@@ -26,12 +26,12 @@
     <%= f.text_field :url %>
   </div>
 
-  <div class="field">
+  <div class="field hidden">
     <%= f.label :preview %>
     <%= f.text_field :preview %>
   </div>
 
-  <div class="field">
+  <div class="field hidden">
     <%= f.label :published %>
     <%= f.date_select :published, {:include_blank => true, :default => nil} %>
   </div>

@@ -4,10 +4,12 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @today = Link.where(published: Date.today)
-    @yesterday = Link.where(published: Date.today-1)
-    @links = Link.where(published: [nil]).order("date_trunc('day', published) DESC")
-    p "Links: " + @links.to_json
+    @today = Link.where(published: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+    @yesterday = Link.where(published: 1.day.ago.beginning_of_day..1.day.ago.end_of_day)
+    @day_before = Link.where(published: 2.day.ago.beginning_of_day..2.day.ago.end_of_day)
+    @day_before_that = Link.where(published: 3.day.ago.beginning_of_day..3.day.ago.end_of_day)
+
+    p @links.to_a
   end
 
   # GET /links/1
@@ -17,6 +19,7 @@ class LinksController < ApplicationController
 
   # GET /links/new
   def new
+    @fresh_links = Link.where(published: nil)
     @link = Link.new
   end
 
@@ -31,7 +34,7 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to @link, notice: 'Link was successfully created.' }
+        format.html { redirect_to new_link_path, notice: 'Link was successfully created.' }
         format.json { render :show, status: :created, location: @link }
       else
         format.html { render :new }

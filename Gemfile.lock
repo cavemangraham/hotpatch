@@ -61,6 +61,10 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    groupdate (4.0.1)
+      activesupport (>= 4.2)
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -83,6 +87,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    multi_xml (0.6.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -167,6 +172,8 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
+  groupdate
+  httparty
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

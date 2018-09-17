@@ -1,37 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-<!-- <h1>Today</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Url</th>
-        <th>Preview</th>
-        <th>Published</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @yesterday.each do |link| %>
-        <tr>
-          <td><%= link.title %></td>
-          <td><%= link.description %></td>
-          <td><%= link.url %></td>
-          <td><%= link.preview %></td>
-          <td><%= link.published.strftime("%A %e/%d") %></td>
-          <td><%= link_to 'Show', link %></td>
-          <td><%= link_to 'Edit', edit_link_path(link) %></td>
-          <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
--->
-
   <div class="row center">
     <div class="col-sm-1 col-sm-offset-2">
       <div class="logo">
@@ -43,68 +11,39 @@
     </div>
   </div>
 
+
   <div class="row">
     <div class="col-sm-1 col-sm-offset-2">
       <div class="date">
-        Sunday
+        <%= @today.first.published.strftime("%A") %>
       </div>
       <div class="date-number">
-        9/16
+        <%= @today.first.published.strftime("%m/%d") %>
       </div>
     </div>
     <div class="col-sm-6 col-sm-offset-1 posts">
+    <hr>
+      <% @today.each do |link| %>
       <div class="row" style="margin-top: 15px;">
         <div class="col-sm-8">
-          <p>HEADLINE 1</p>
+          <h3 class="link-title"><a href="<%= link.url %>"><%= link.title %></a></h3>
+          <p class="link-description"><%= link.description %></p>
         </div>
         <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
+          <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
         </div>
       </div>
 
       <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 2</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 3</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 4</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-        <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 5</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
+      <% end %>
+
     </div>
   </div>
 
 <div class="newsletter-wrapper">
   <div class="newsletter text-center">
     <div class="newsletter-tagline pull-left">
-      <h4>Get the five Hotpatch picks in your inbox every day!</h4>
+      <h4>Get the four Hotpatch picks in your inbox every day!</h4>
     </div>
     <form class="newsletter-form">
       <input type="text" class="form-control email-input pull-left" name="email" value="" placeholder="Your Email">
@@ -113,176 +52,34 @@
   </div>
 </div>
 
-<div class="row">
+<% unless @yesterday.blank?%>
+  <div class="row">
     <div class="col-sm-1 col-sm-offset-2">
       <div class="date">
-        Saturday
+        <%= @yesterday.first.published.strftime("%A") %>
       </div>
       <div class="date-number">
-        9/15
+        <%= @yesterday.first.published.strftime("%m/%d") %>
       </div>
     </div>
     <div class="col-sm-6 col-sm-offset-1 posts">
+      <hr>
+      <% @yesterday.each do |link| %>
       <div class="row" style="margin-top: 15px;">
         <div class="col-sm-8">
-          <p>HEADLINE 1</p>
+          <p><%= link.title %></p>
+          <p><%= link.description %></p>
         </div>
         <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
+          <img class="link-preview" src="<%= link.preview %>">
         </div>
       </div>
 
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 2</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 3</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 4</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-        <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 5</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
+      <% end %>
+
     </div>
   </div>
-
-<div class="row">
-    <div class="col-sm-1 col-sm-offset-2">
-      <div class="date">
-        Friday
-      </div>
-      <div class="date-number">
-        9/14
-      </div>
-    </div>
-    <div class="col-sm-6 col-sm-offset-1 posts">
-      <div class="row" style="margin-top: 15px;">
-        <div class="col-sm-8">
-          <p>HEADLINE 1</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 2</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 3</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 4</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-        <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 5</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="row">
-    <div class="col-sm-1 col-sm-offset-2">
-      <div class="date">
-        Thursday
-      </div>
-    </div>
-    <div class="col-sm-6 col-sm-offset-1 posts">
-      <div class="row" style="margin-top: 15px;">
-        <div class="col-sm-8">
-          <p>HEADLINE 1</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 2</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 3</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 4</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-      <hr>
-        <div class="row">
-        <div class="col-sm-8">
-          <p>HEADLINE 5</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <img src="https://via.placeholder.com/118x88">
-        </div>
-      </div>
-    </div>
-  </div>
+<% end %>
 
 
 <div class="col-sm-4 col-sm-offset-4">
