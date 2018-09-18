@@ -3,15 +3,15 @@
   <div class="row center">
     <div class="col-sm-1 col-sm-offset-2">
       <div class="logo">
-        <%= link_to "H", links_path, :class => "logo-link pull-left" %>
+        <%= link_to "h", links_path, :class => "logo-link" %>
       </div>
     </div>
     <div class="col-sm-6 center" style="margin-top:20px; padding-left: 0;">
-      <span class="tagline"><br>The four best developer<br> links, every day</span>
+      <span class="tagline"><br>The four best programmer<br> links, every day</span>
     </div>
   </div>
 
-
+<% unless @today.blank? %>
   <div class="row">
     <div class="col-sm-1 col-sm-offset-2">
       <div class="date">
@@ -22,14 +22,13 @@
       </div>
     </div>
     <div class="col-sm-6 col-sm-offset-1 posts">
-    <hr>
       <% @today.each do |link| %>
       <div class="row" style="margin-top: 15px;">
-        <div class="col-sm-8">
+        <div class="col-sm-10" style="padding: 0px;">
           <h3 class="link-title"><a href="<%= link.url %>"><%= link.title %></a></h3>
           <p class="link-description"><%= link.description %></p>
         </div>
-        <div class="col-sm-4 text-center">
+        <div class="col-sm-2 text-center" style="padding: 0px;">
           <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
         </div>
       </div>
@@ -39,20 +38,37 @@
 
     </div>
   </div>
+<% end %>
 
 <div class="newsletter-wrapper">
   <div class="newsletter text-center">
+    <div class="thanks hidden" style="color: green;">
+      <h4>Thank you for subscribing! Enjoy the best developer links every day.</h4>
+    </div>
+    <div class="error hidden" style="color: red;">
+      <h5>Sorry there was an issue. Please try again or use a different email address.</h5>
+    </div>
     <div class="newsletter-tagline pull-left">
       <h4>Get the four Hotpatch picks in your inbox every day!</h4>
     </div>
-    <form class="newsletter-form">
-      <input type="text" class="form-control email-input pull-left" name="email" value="" placeholder="Your Email">
-      <button type="submit" class="newsletter-button btn btn-primary">Subscribe</button>
-    </form>
+    <!-- Begin MailChimp Signup Form -->
+    <div id="mc_embed_signup">
+      <form action="https://easyegift.us7.list-manage.com/subscribe/post" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate myform" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+        <input type="hidden" name="u" value="b53bafa7ef033f57852b33a8d">
+        <input type="hidden" name="id" value="ed95d0c7fa">
+
+        <input type="email" value="" name="EMAIL" class="form-control email-input pull-left" id="mce-EMAIL" placeholder="Your Email" required>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b53bafa7ef033f57852b33a8d_ed95d0c7fa" tabindex="-1" value=""></div>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="newsletter-button btn btn-primary"></div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 
-<% unless @yesterday.blank?%>
+<% unless @yesterday.blank? %>
   <div class="row">
     <div class="col-sm-1 col-sm-offset-2">
       <div class="date">
@@ -63,18 +79,76 @@
       </div>
     </div>
     <div class="col-sm-6 col-sm-offset-1 posts">
-      <hr>
       <% @yesterday.each do |link| %>
       <div class="row" style="margin-top: 15px;">
-        <div class="col-sm-8">
-          <p><%= link.title %></p>
-          <p><%= link.description %></p>
+        <div class="col-sm-10" style="padding: 0px;">
+          <h3 class="link-title"><a href="<%= link.url %>"><%= link.title %></a></h3>
+          <p class="link-description"><%= link.description %></p>
         </div>
-        <div class="col-sm-4 text-center">
-          <img class="link-preview" src="<%= link.preview %>">
+        <div class="col-sm-2 text-center" style="padding: 0px;">
+          <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
         </div>
       </div>
 
+      <hr>
+      <% end %>
+
+    </div>
+  </div>
+<% end %>
+
+<% unless @day_before.blank? %>
+  <div class="row">
+    <div class="col-sm-1 col-sm-offset-2">
+      <div class="date">
+        <%= @day_before.first.published.strftime("%A") %>
+      </div>
+      <div class="date-number">
+        <%= @day_before.first.published.strftime("%m/%d") %>
+      </div>
+    </div>
+    <div class="col-sm-6 col-sm-offset-1 posts">
+      <% @day_before.each do |link| %>
+      <div class="row" style="margin-top: 15px;">
+        <div class="col-sm-10" style="padding: 0px;">
+          <h3 class="link-title"><a href="<%= link.url %>"><%= link.title %></a></h3>
+          <p class="link-description"><%= link.description %></p>
+        </div>
+        <div class="col-sm-2 text-center" style="padding: 0px;">
+          <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+        </div>
+      </div>
+
+      <hr>
+      <% end %>
+
+    </div>
+  </div>
+<% end %>
+
+<% unless @day_before_that.blank? %>
+  <div class="row">
+    <div class="col-sm-1 col-sm-offset-2">
+      <div class="date">
+        <%= @day_before_that.first.published.strftime("%A") %>
+      </div>
+      <div class="date-number">
+        <%= @day_before_that.first.published.strftime("%m/%d") %>
+      </div>
+    </div>
+    <div class="col-sm-6 col-sm-offset-1 posts">
+      <% @day_before_that.each do |link| %>
+      <div class="row" style="margin-top: 15px;">
+        <div class="col-sm-10" style="padding: 0px;">
+          <h3 class="link-title"><a href="<%= link.url %>"><%= link.title %></a></h3>
+          <p class="link-description"><%= link.description %></p>
+        </div>
+        <div class="col-sm-2 text-center" style="padding: 0px;">
+          <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+        </div>
+      </div>
+
+      <hr>
       <% end %>
 
     </div>
@@ -85,3 +159,32 @@
 <div class="col-sm-4 col-sm-offset-4">
   <%= link_to 'New Link', new_link_path %>
 </div>
+
+<script>
+$('.myform').submit(function(e) {
+  var $this = $(this);
+  $.ajax({
+      type: "GET", // GET & url for json slightly different
+      url: "https://easyegift.us7.list-manage.com/subscribe/post-json?c=?",
+      data: $this.serialize(),
+      dataType    : 'json',
+      contentType: "application/json; charset=utf-8",
+      error       : function(err) { alert("Could not connect to the registration server."); },
+      success     : function(data) {
+          if (data.result != "success") {
+              // Something went wrong, parse data.msg string and display message
+              console.log("fail");
+              $( ".error" ).removeClass("hidden");
+          } else {
+              // It worked, so hide form and display thank-you message.
+              console.log("success");
+              $( ".newsletter-tagline" ).hide();
+              $( "#mc_embed_signup" ).hide();
+              $( ".thanks" ).removeClass("hidden");
+              $( ".error" ).addClass("hidden");
+          }
+      }
+  });
+  return false;
+});
+</script>
