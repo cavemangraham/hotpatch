@@ -38,7 +38,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 
 gem 'httparty'
+
+# Mailchimp
 gem 'gibbon'
+
+# Twitter integrations
+gem 'twitter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
