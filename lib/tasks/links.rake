@@ -20,6 +20,7 @@ namespace :links do
 
     p "TWEETING LINKS"
     @links = Link.where(published: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+    p @links
 
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
