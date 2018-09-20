@@ -29,7 +29,11 @@
           <p class="link-description"><%= link.description %></p>
         </div>
         <div class="col-sm-2 text-center" style="padding: 0px;">
-          <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+          <% if link.preview.blank? %>
+            <a href="<%= link.url %>"><img class="link-preview" src="<%= image_url("missing.png") %>"></a>
+          <% else %>
+            <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+          <% end %>
         </div>
       </div>
 
@@ -86,7 +90,11 @@
           <p class="link-description"><%= link.description %></p>
         </div>
         <div class="col-sm-2 text-center" style="padding: 0px;">
-          <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+          <% if link.preview.blank? %>
+            <a href="<%= link.url %>"><img class="link-preview" src="<%= image_url("missing.png") %>"></a>
+          <% else %>
+            <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+          <% end %>
         </div>
       </div>
 
@@ -115,7 +123,11 @@
           <p class="link-description"><%= link.description %></p>
         </div>
         <div class="col-sm-2 text-center" style="padding: 0px;">
-          <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+          <% if link.preview.blank? %>
+            <a href="<%= link.url %>"><img class="link-preview" src="<%= image_url("missing.png") %>"></a>
+          <% else %>
+            <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+          <% end %>
         </div>
       </div>
 
@@ -144,7 +156,11 @@
           <p class="link-description"><%= link.description %></p>
         </div>
         <div class="col-sm-2 text-center" style="padding: 0px;">
-          <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+          <% if link.preview.blank? %>
+            <a href="<%= link.url %>"><img class="link-preview" src="<%= image_url("missing.png") %>"></a>
+          <% else %>
+            <a href="<%= link.url %>"><img class="link-preview" src="<%= link.preview %>"></a>
+          <% end %>
         </div>
       </div>
 
