@@ -2,6 +2,7 @@
 @import "bootstrap";
 
 body {
+  overflow-x: hidden;
   background: #e9ebee;
 }
 
@@ -159,7 +160,7 @@ body {
     font-size: 70px;
     font-weight: 700;
     color: #545454f7;
-    margin: 20px 0;
+    margin: 0px 0px 10px 0;
   }
 
   .date-number {
@@ -180,10 +181,12 @@ body {
     max-width: 500px;
     width: 100%;
     margin-bottom: 10px;
+    border-radius: 0px;
     box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
   }
 
   .newsletter {
+    border-radius: 0px;
     color: #fff;
     background: #f95050;
     padding: 20px;
@@ -200,7 +203,7 @@ body {
   }
 
   .email-input {
-    width: 240px;
+    width: 220px;
     padding: 6px 12px;
     margin-right: 0px;
     margin-top: 4px;
@@ -227,6 +230,7 @@ body {
 @media (min-width: 830px) {
 
 .newsletter-wrapper {
+  border-radius: 10px;
   margin: 0 auto;
   max-width: 840px;
   margin-bottom: 60px;
@@ -238,6 +242,7 @@ body {
   padding: 40px;
   color: #fff;
   background: #f95050;
+  border-radius: 10px;
 
 }
 .newsletter-tagline {
