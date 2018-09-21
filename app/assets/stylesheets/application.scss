@@ -6,8 +6,7 @@ body {
 }
 
 .header {
-  max-width: 640px;
-  margin: 30px auto 0px auto;
+  margin: 0px auto 60px auto;
   font-size: 18px;
   line-height: 24px;
 }
@@ -28,7 +27,7 @@ body {
 }
 
 .tagline {
-  max-width: 120px;
+  max-width: 300px;
   color: #595959;
   font-size: 20px;
   font-weight: bold;
@@ -94,13 +93,121 @@ body {
   margin: auto auto;
   margin-top: 10px;
   padding: 20px 40px 20px 40px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
 }
 
 .newsletter-wrapper {
   margin: 0 auto;
   width: 840px;
+  margin-bottom: 10px;
+  vertical-align: top;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+}
+
+.newsletter {
+  padding: 40px;
+  color: #fff;
+  background: #f95050;
+
+}
+.newsletter-tagline {
+  margin-right: 10px;
+}
+
+.newsletter-form {
+
+}
+
+.email-input {
+  width: 200px;
+  padding: 6px 12px;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.newsletter-button {
+  padding: 6px 16px;
+  margin-top: 4px;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+@media (min-width: 200px) {
+
+  .date {
+    font-size: 70px;
+    font-weight: 700;
+    color: #545454f7;
+    margin: 20px 0;
+  }
+
+  .date-number {
+    display: none;
+  }
+
+  .tagline {
+    max-width: 300px;
+    color: #595959;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 30px;
+    padding-right: 0px;
+  }
+
+  .newsletter-wrapper {
+    margin: 20px auto;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  .newsletter {
+    color: #fff;
+    background: #f95050;
+    padding: 20px;
+  }
+
+  .newsletter-tagline {
+    margin-right: 10px;
+    float: left !important;
+    display: block;
+  }
+
+  .newsletter-form {
+
+  }
+
+  .email-input {
+    width: 240px;
+    padding: 6px 12px;
+    margin-right: 0px;
+    margin-top: 4px;
+  }
+
+  .newsletter-button {
+    padding: 6px 16px;
+  }
+
+  #mc_embed_signup {
+    display: block;
+    text-align: center;
+  }
+
+  .logo {
+    margin-left: 0px;
+    text-align: left;
+  }
+
+}
+
+@media (min-width: 830px) {
+
+.newsletter-wrapper {
+  margin: 0 auto;
+  max-width: 840px;
   margin-bottom: 60px;
   vertical-align: top;
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
@@ -130,5 +237,29 @@ body {
 .newsletter-button {
   padding: 6px 16px;
   margin-top: 4px;
+}
+
+  .date {
+    font-size: 100px;
+    font-weight: 700;
+    margin-left: -160px;
+    margin-top: 80px;
+    color: #545454f7;
+    position: relative;
+  }
+
+  .date-number {
+    font-size: 90px;
+    font-weight: 700;
+    margin-left: -160px;
+    margin-top: -70px;
+    color: #545454f7;
+    position: relative;
+    display: block;
+  }
+  .posts {
+    margin-bottom: 60px;
+  }
+
 }
 
