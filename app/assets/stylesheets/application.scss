@@ -12,8 +12,13 @@ body {
 }
 
 .logo {
-  margin-left: 0px;
+  margin-left: 15px;
   text-align: right;
+  padding-left: 15px;
+}
+
+.logo-wrapper {
+  padding-left: 15px;
 }
 
 .logo-link {
@@ -24,6 +29,11 @@ body {
   padding: 12;
   border-radius: 10px;
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+}
+
+.logo-link:hover {
+  color: #d00000;
+  text-decoration: none;
 }
 
 .tagline {
@@ -135,6 +145,9 @@ body {
 /* No media query since this is the default in Bootstrap */
 
 @media (min-width: 200px) {
+  .logo {
+
+  }
 
   .date {
     font-size: 70px;
@@ -197,8 +210,10 @@ body {
   }
 
   .logo {
-    margin-left: 0px;
-    text-align: left;
+    padding-left: 0px;
+  }
+  .logo-wrapper {
+    padding-left: 0px;
   }
 
 }
@@ -259,6 +274,13 @@ body {
   }
   .posts {
     margin-bottom: 60px;
+  }
+  .logo {
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+  .logo-wrapper {
+    padding-left: 0px;
   }
 
 }
