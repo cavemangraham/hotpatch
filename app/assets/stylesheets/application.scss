@@ -23,12 +23,7 @@ body {
 
 .logo-link {
   color: #ad0000;
-  background: #fff;
   font-size: 80px;
-  border: 3px solid #ad0000;
-  padding: 12;
-  border-radius: 10px;
-  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
 }
 
 .logo-link:hover {
@@ -113,12 +108,14 @@ body {
   margin-bottom: 10px;
   vertical-align: top;
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
 }
 
 .newsletter {
   padding: 40px;
   color: #fff;
   background: #f95050;
+  border-radius: 10px;
 
 }
 .newsletter-tagline {
