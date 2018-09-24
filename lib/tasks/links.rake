@@ -30,7 +30,7 @@ namespace :links do
     @links = Link.where(published: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
 
     @links.each do |link|
-      client.update("#{link.title} #{link.url}")
+      client.update("#{link.url}")
     end
 
     # SENDING MAIL
